@@ -1,0 +1,41 @@
+
+Java program to calculate and print Fibonacci number using both recursion and Iteration. Fibonacci number is sum of previous two Fibonacci numbers fn= fn-1+ fn-2 first 10 Fibonacci numbers are 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+
+Sample Input 0
+
+12
+Sample Output 0
+
+Enter number upto which Fibonacci series to print: 12 
+Fibonacci series upto 12 numbers : 
+1 1 2 3 5 8 13 21 34 55 89 144
+
+===================================================
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+   
+    public static void main(String[] args) {
+     int i=1;
+        int a=0;
+        int b=1;
+        int n=0;
+        Scanner sc=new Scanner(System.in);
+        
+        n=sc.nextInt();
+        System.out.println("Enter number upto which Fibonacci series to print: "+n);
+        System.out.println("Fibonacci series upto "+n+" numbers :");
+        
+        while(i<=n)
+        {
+            
+        int sum=a+b;
+        System.out.print(b+" ");
+        a=b;
+        b=sum;
+        i++;
+        }
+    }
+}
