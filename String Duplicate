@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static void duplicate(String str){
+        char[] chr=str.toCharArray();
+        int count=1;
+        for(int i=0;i<chr.length;i++){
+            count=1;
+            for(int j=i+1;j<chr.length;j++){
+                if(chr[i]==chr[j]){
+                    count++;
+                }      
+            }
+            if(count>1)
+                System.out.println(chr[i]+" : "+count);
+        }
+    }
+        
+        static void duplicate1(String str){
+        char[] chr=str.toCharArray();
+        Arrays.sort(chr);    
+        int count=1;
+        for(int i=0;i<chr.length;i++){
+            count=1;
+            for(int j=i+1;j<chr.length;j++){
+                if(chr[i]==chr[j]){
+                    count++;
+                }      
+            }
+            if(count>1)
+                System.out.println(chr[i]+" : "+count);
+        }
+        
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        System.out.println("List of duplicate characters in String '"+str+"'");
+        duplicate(str);
+        String str1=sc.next();
+        System.out.println("List of duplicate characters in String '"+str1+"'");
+        duplicate1(str1);
+        String str2=sc.next();
+        System.out.println("List of duplicate characters in String '"+str2+"'");
+        duplicate(str2);
+    }
+}
